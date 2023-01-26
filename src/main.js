@@ -8,6 +8,7 @@ import VModal from 'vue-js-modal';
 import '@/plugins/day.js';
 Vue.config.productionTip = false;
 Vue.use(VModal);
+
 new Vue({
 	vuetify,
 	router,

@@ -1,13 +1,20 @@
 <template>
-	<div>list</div>
+	<div>
+		<!-- list : <span>{{ state.container }}</span> -->
+	</div>
 </template>
 
 <script>
-export default {
-	name: 'Main',
-	data: () => ({
-		//
-	}),
-};
+import { defineComponent, reactive } from '@vue/composition-api';
+export default defineComponent({
+	setup() {
+		const state = reactive({
+			container: 10,
+		});
+		return {
+			state,
+		};
+	},
+});
 </script>
 <style></style>
