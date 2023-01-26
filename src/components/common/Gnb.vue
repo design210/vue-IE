@@ -18,7 +18,8 @@ export default {
 <style lang="scss">
 .gnb {
 	.main {
-		padding-right: 10px;
+		color: skyblue;
+		margin-right: 10px;
 	}
 }
 </style>
