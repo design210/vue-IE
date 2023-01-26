@@ -10,7 +10,6 @@ const common = {
 	},
 	mutations: {
 		setLoading(state, payload) {
-			console.log(payload);
 			state.loading = payload;
 		},
 	},

@@ -2,8 +2,9 @@
 	<div>
 		<div>main</div>
 		<div>dayjs : {{ $date().format('YYYY-MM-DD') }}</div>
-		<div>{{ loading }}</div>
-		<v-alert type="warning" @click="handleVuex">vuex</v-alert>
+		<div>vuex : {{ loading }}</div>
+		<v-alert type="warning" @click="handleVuex">set state</v-alert>
+		<v-alert type="warning" @click="openModal">open Modal</v-alert>
 		<v-alert type="success" @click="searchBooks">api 호출</v-alert>
 		<div v-if="res !== null">{{ res.data.documents }}</div>
 	</div>
@@ -12,6 +13,8 @@
 <script>
 import { mapState } from 'vuex';
 import { kakaoBookSearchApi } from '@/api/index';
+import { getPopupOpt } from '@/utils/modal';
+import ModalCart from '@/components/modal/ModalCart';
 export default {
 	name: 'Main',
 	data() {
@@ -22,9 +25,6 @@ export default {
 	computed: {
 		...mapState('common', ['loading']),
 	},
-	mounted() {
-		console.log(this.$store.state.common.loading);
-	},
 	methods: {
 		handleVuex() {
 			this.$store.commit('common/setLoading', this.loading + 1);
@@ -32,7 +32,13 @@ export default {
 		async searchBooks() {
 			const response = await kakaoBookSearchApi({ query: '똥' });
 			this.res = response;
-			console.log(response);
+		},
+		openModal() {
+			this.$modal.show(
+				ModalCart,
+				{},
+				getPopupOpt('ModalCart', '95%', 'auto', false),
+			);
 		},
 	},
 };
