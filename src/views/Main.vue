@@ -1,8 +1,8 @@
 <template>
 	<div>
 		<div>main</div>
-		<div @click="searchBooks">api 호출</div>
-		<div>{{ res }}</div>
+		<v-alert type="success" @click="searchBooks">api 호출</v-alert>
+		<div v-if="res !== null">{{ res.data.documents }}</div>
 	</div>
 </template>
 

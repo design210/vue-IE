@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="v-application">
 		<Gnb />
 		<router-view />
 	</div>
