@@ -1,19 +1,14 @@
 <template>
-	<div>
-		<!-- list : <span>{{ state.container }}</span> -->
-	</div>
+	<div></div>
 </template>
 
 <script>
-import { defineComponent, reactive } from '@vue/composition-api';
+import { defineComponent } from '@vue/composition-api/index.js';
 export default defineComponent({
 	setup() {
-		const state = reactive({
-			container: 10,
-		});
-		return {
-			state,
-		};
+		// error
+		let name = 'nkh';
+		return { name };
 	},
 });
 </script>
