@@ -1,28 +1,20 @@
 <template>
-  <div>
-    <div class="gnb">
-      <router-link to="/" class="main">main</router-link>
-      <router-link to="/list" class="list">list</router-link>
-    </div>
-    <router-view />
-  </div>
+	<div>
+		<Gnb />
+		<router-view />
+	</div>
 </template>
 
 <script>
-
+import Gnb from '@/components/common/Gnb';
 export default {
-  name: 'App',
+	name: 'App',
 
-  data: () => ({
-    //
-  }),
+	data: () => ({
+		//
+	}),
+	components: { Gnb },
 };
 </script>
 
-<style lang="scss">
-.gnb{
-  .main{
-    padding-right:10px;
-  }
-}
-</style>
+<style lang="scss"></style>

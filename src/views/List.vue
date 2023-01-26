@@ -1,14 +1,13 @@
 <template>
-    <div>list</div>
+	<div>list</div>
 </template>
 
 <script>
 export default {
-  name: 'Main',
-  data: () => ({
-    //
-  }),
+	name: 'Main',
+	data: () => ({
+		//
+	}),
 };
 </script>
-<style>
-</style>
+<style></style>
