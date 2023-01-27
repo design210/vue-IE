@@ -1,15 +1,16 @@
 <template>
-	<div></div>
+	<div>
+		<BarChart />
+	</div>
 </template>
-
 <script>
-import { defineComponent } from '@vue/composition-api/index.js';
-export default defineComponent({
-	setup() {
-		// error
-		let name = 'nkh';
-		return { name };
+import BarChart from '@/components/chart/BarChart';
+
+export default {
+	name: 'VueChartJS',
+	components: {
+		BarChart,
 	},
-});
+};
 </script>
 <style></style>
