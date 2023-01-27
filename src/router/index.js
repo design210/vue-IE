@@ -17,6 +17,10 @@ const router = new VueRouter({
 			path: '/list',
 			component: () => import('@/views/List.vue'),
 		},
+		{
+			path: '/api',
+			component: () => import('@/views/Api.vue'),
+		},
 	],
 });
 
