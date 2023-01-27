@@ -18,12 +18,13 @@ module.exports = {
 	plugins: ['prettier'],
 	// 사용자 편의 규칙 추가
 	rules: {
+		"no-unused-vars": "off",
 		'prettier/prettier': [
 			'error',
 			// 아래 규칙들은 개인 선호에 따라 prettier 문법 적용
 			// https://prettier.io/docs/en/options.html
 			{
-        endOfLine:'auto',
+        		endOfLine:'auto',
 				singleQuote: true,
 				semi: true,
 				useTabs: true,

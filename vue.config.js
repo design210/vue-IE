@@ -8,6 +8,17 @@ module.exports = {
 	},
 	lintOnSave: false,
 	productionSourceMap: false,
+	css: {
+		loaderOptions: {
+			scss: {
+				additionalData: `
+						   @import "@/styles/mixin.scss";
+						   @import "@/styles/common.scss";
+						   @import "@/styles/reset.scss";
+					   `,
+			},
+		},
+	},
 	transpileDependencies: [
 		({ onlyFirst = false } = {}) => {
 			const pattern = [

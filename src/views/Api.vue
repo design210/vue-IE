@@ -1,9 +1,14 @@
 <template>
-	<div>{{ count }} <button @click="increment()">+</button></div>
+	<div>
+		<div>{{ count }} <button @click="increment()">+</button></div>
+		<div>>Mouse position is at: {{ x }}, {{ y }}</div>
+	</div>
 </template>
 <script setup>
-import { ref, onMounted } from 'vue';
+import { useMouse } from '@/composables/mouse';
+const { x, y } = useMouse();
 
+import { ref, onMounted } from 'vue';
 // reactive state
 const count = ref(10);
 
