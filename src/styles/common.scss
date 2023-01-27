@@ -1,1 +1,7 @@
 /*common*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    /* IE11 Hack */
+    .v-application{
+        display: block !important
+    } 
+}

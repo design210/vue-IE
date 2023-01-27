@@ -1,8 +1,10 @@
 <template>
 	<v-app>
 		<v-main>
-			<Gnb />
-			<router-view />
+			<div>
+				<Gnb />
+				<router-view />
+			</div>
 		</v-main>
 	</v-app>
 </template>

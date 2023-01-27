@@ -6,7 +6,11 @@
 		<v-alert type="warning" @click="handleVuex">set state</v-alert>
 		<v-alert type="warning" @click="openModal">open Modal</v-alert>
 		<v-alert type="success" @click="searchBooks">api 호출</v-alert>
-		<div v-if="res !== null">{{ res.data.documents }}</div>
+		<div v-if="res !== null" style="word-wrap: break-word">
+			<span style="word-break: keep-all !important">{{
+				res.data.documents
+			}}</span>
+		</div>
 	</div>
 </template>
 
