@@ -9,16 +9,8 @@
 	</v-app>
 </template>
 
-<script>
+<script setup>
 import Gnb from '@/components/common/Gnb';
-export default {
-	name: 'App',
-
-	data: () => ({
-		//
-	}),
-	components: { Gnb },
-};
 </script>
 
 <style lang="scss"></style>

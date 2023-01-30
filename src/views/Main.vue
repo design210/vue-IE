@@ -14,37 +14,28 @@
 	</div>
 </template>
 
-<script>
-import { mapState } from 'vuex';
+<script setup>
 import { kakaoBookSearchApi } from '@/api/index';
 import { getPopupOpt } from '@/utils/modal';
 import ModalCart from '@/components/modal/ModalCart';
-export default {
-	name: 'Main',
-	data() {
-		return {
-			res: null,
-		};
-	},
-	computed: {
-		...mapState('common', ['loading']),
-	},
-	methods: {
-		handleVuex() {
-			this.$store.commit('common/setLoading', this.loading + 1);
-		},
-		async searchBooks() {
-			const response = await kakaoBookSearchApi({ query: '똥' });
-			this.res = response;
-		},
-		openModal() {
-			this.$modal.show(
-				ModalCart,
-				{},
-				getPopupOpt('ModalCart', '95%', 'auto', false),
-			);
-		},
-	},
+import { ref, onMounted, getCurrentInstance, computed } from 'vue';
+const global = getCurrentInstance().proxy;
+
+const res = ref(null);
+const handleVuex = () => {
+	global.$store.commit('common/setLoading', loading.value + 1);
 };
+const openModal = () => {
+	global.$modal.show(
+		ModalCart,
+		{},
+		getPopupOpt('ModalCart', '95%', 'auto', false),
+	);
+};
+const searchBooks = async () => {
+	const response = await kakaoBookSearchApi({ query: '똥' });
+	res.value = response;
+};
+const loading = computed(() => global.$store.getters['common/loading']);
 </script>
 <style></style>

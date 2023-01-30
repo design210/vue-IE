@@ -13,15 +13,13 @@
 	</modalWrap>
 </template>
 
-<script>
+<script setup>
 import modalWrap from '@/components/modal/ModalTemplate';
-export default {
-	components: { modalWrap },
-	methods: {
-		async close() {
-			this.$emit('close');
-		},
-	},
+import { getCurrentInstance } from 'vue';
+const global = getCurrentInstance().proxy;
+
+const close = () => {
+	global.$emit('close');
 };
 </script>
 

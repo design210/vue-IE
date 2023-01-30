@@ -10,13 +10,11 @@
 	</div>
 </template>
 
-<script>
-export default {
-	methods: {
-		close() {
-			this.$emit('close');
-		},
-	},
+<script setup>
+import { getCurrentInstance } from 'vue';
+const global = getCurrentInstance().proxy;
+const close = () => {
+	global.$emit('close');
 };
 </script>
 

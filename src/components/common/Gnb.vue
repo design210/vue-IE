@@ -6,15 +6,7 @@
 	</div>
 </template>
 
-<script>
-export default {
-	name: 'Gnb',
-
-	data: () => ({
-		//
-	}),
-};
-</script>
+<script seutp></script>
 
 <style lang="scss">
 .gnb {

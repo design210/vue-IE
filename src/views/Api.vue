@@ -8,7 +8,9 @@
 import { useMouse } from '@/composables/mouse';
 const { x, y } = useMouse();
 
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, getCurrentInstance } from 'vue';
+const global = getCurrentInstance().proxy;
+console.log(global);
 // reactive state
 const count = ref(10);
 

@@ -3,14 +3,7 @@
 		<BarChart />
 	</div>
 </template>
-<script>
+<script setup>
 import BarChart from '@/components/chart/BarChart';
-
-export default {
-	name: 'VueChartJS',
-	components: {
-		BarChart,
-	},
-};
 </script>
 <style></style>
