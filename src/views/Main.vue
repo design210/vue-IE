@@ -1,19 +1,3 @@
-<template>
-	<div>
-		<div>main</div>
-		<div>dayjs : {{ $date().format('YYYY-MM-DD') }}</div>
-		<div>vuex : {{ loading }}</div>
-		<v-alert type="warning" @click="handleVuex">set state</v-alert>
-		<v-alert type="warning" @click="openModal">open Modal</v-alert>
-		<v-alert type="success" @click="searchBooks">api 호출</v-alert>
-		<div v-if="res !== null" style="word-wrap: break-word">
-			<span style="word-break: keep-all !important">{{
-				res.data.documents
-			}}</span>
-		</div>
-	</div>
-</template>
-
 <script setup>
 import { kakaoBookSearchApi } from '@/api/index';
 import { getPopupOpt } from '@/utils/modal';
@@ -38,4 +22,19 @@ const searchBooks = async () => {
 };
 const loading = computed(() => global.$store.getters['common/loading']);
 </script>
-<style></style>
+<template>
+	<div>
+		<div>main</div>
+		<div>dayjs : {{ $date().format('YYYY-MM-DD') }}</div>
+		<div>vuex : {{ loading }}</div>
+		<v-alert type="warning" @click="handleVuex">set state</v-alert>
+		<v-alert type="warning" @click="openModal">open Modal</v-alert>
+		<v-alert type="success" @click="searchBooks">api 호출</v-alert>
+		<div v-if="res !== null" style="word-wrap: break-word">
+			<span style="word-break: keep-all !important">{{
+				res.data.documents
+			}}</span>
+		</div>
+	</div>
+</template>
+<style lang="scss"></style>

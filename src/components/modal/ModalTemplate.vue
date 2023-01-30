@@ -1,3 +1,10 @@
+<script setup>
+import { getCurrentInstance } from 'vue';
+const global = getCurrentInstance().proxy;
+const close = () => {
+	global.$emit('close');
+};
+</script>
 <template>
 	<div class="modal-wrap">
 		<div @click="close" class="close"><v-icon>mdi-window-close</v-icon></div>
@@ -9,15 +16,6 @@
 		<slot name="footer"></slot>
 	</div>
 </template>
-
-<script setup>
-import { getCurrentInstance } from 'vue';
-const global = getCurrentInstance().proxy;
-const close = () => {
-	global.$emit('close');
-};
-</script>
-
 <style lang="scss" scoped>
 .modal-wrap {
 	padding: 25px 25px 50px;

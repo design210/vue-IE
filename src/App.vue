@@ -1,3 +1,6 @@
+<script setup>
+import Gnb from '@/components/common/Gnb';
+</script>
 <template>
 	<v-app>
 		<v-main>
@@ -8,9 +11,4 @@
 		</v-main>
 	</v-app>
 </template>
-
-<script setup>
-import Gnb from '@/components/common/Gnb';
-</script>
-
 <style lang="scss"></style>

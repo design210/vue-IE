@@ -1,3 +1,12 @@
+<script setup>
+import modalWrap from '@/components/modal/ModalTemplate';
+import { getCurrentInstance } from 'vue';
+const global = getCurrentInstance().proxy;
+
+const close = () => {
+	global.$emit('close');
+};
+</script>
 <template>
 	<modalWrap @close="close">
 		<template slot="head"><h2>주문서</h2></template>
@@ -12,17 +21,6 @@
 		</template>
 	</modalWrap>
 </template>
-
-<script setup>
-import modalWrap from '@/components/modal/ModalTemplate';
-import { getCurrentInstance } from 'vue';
-const global = getCurrentInstance().proxy;
-
-const close = () => {
-	global.$emit('close');
-};
-</script>
-
 <style lang="scss" scoped>
 .info {
 	display: flex;

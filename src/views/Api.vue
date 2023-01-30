@@ -1,9 +1,3 @@
-<template>
-	<div>
-		<div>{{ count }} <button @click="increment()">+</button></div>
-		<div>>Mouse position is at: {{ x }}, {{ y }}</div>
-	</div>
-</template>
 <script setup>
 import { useMouse } from '@/composables/mouse';
 const { x, y } = useMouse();
@@ -24,5 +18,10 @@ onMounted(() => {
 	console.log(`The initial count is ${count.value}.`);
 });
 </script>
-
-<style></style>
+<template>
+	<div>
+		<div>{{ count }} <button @click="increment()">+</button></div>
+		<div>>Mouse position is at: {{ x }}, {{ y }}</div>
+	</div>
+</template>
+<style lang="scss"></style>
